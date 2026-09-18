@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.library-markdown {
+  max-width: 78ch;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.library-markdown h1,
+.library-markdown h2,
+.library-markdown h3,
+.library-markdown h4 {
+  margin: 2rem 0 0.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.library-markdown h1 { font-size: clamp(2rem, 4vw, 3rem); }
+.library-markdown h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.library-markdown h3 { font-size: 1.35rem; }
+.library-markdown h4 { font-size: 1.1rem; }
+.library-markdown p,
+.library-markdown ul,
+.library-markdown ol,
+.library-markdown blockquote,
+.library-markdown pre,
+.library-markdown table {
+  margin: 1rem 0;
+}
+
+.library-markdown ul { list-style: disc; padding-left: 1.5rem; }
+.library-markdown ol { list-style: decimal; padding-left: 1.5rem; }
+.library-markdown li { margin: 0.35rem 0; padding-left: 0.25rem; }
+.library-markdown a { text-decoration: underline; text-underline-offset: 3px; }
+.library-markdown strong { font-weight: 700; }
+.library-markdown blockquote { border-left: 3px solid #f97316; padding-left: 1rem; font-style: italic; }
+.library-markdown hr { margin: 2rem 0; border: 0; border-top: 1px solid currentColor; opacity: 0.2; }
+.library-markdown code { border-radius: 2px; padding: 0.15rem 0.35rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+.library-markdown pre { overflow-x: auto; border: 1px solid currentColor; border-radius: 2px; padding: 1rem; }
+.library-markdown pre code { padding: 0; background: transparent; }
+.library-markdown table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+.library-markdown th,
+.library-markdown td { border: 1px solid currentColor; padding: 0.65rem 0.8rem; text-align: left; }
+.library-markdown th { font-weight: 700; }
+.library-markdown-light { color: #374151; }
+.library-markdown-light h1,
+.library-markdown-light h2,
+.library-markdown-light h3,
+.library-markdown-light h4 { color: #111827; }
+.library-markdown-light a { color: #c2410c; }
+.library-markdown-light code { background: #f3f4f6; }
+.library-markdown-light pre { background: #f9fafb; }
+.library-markdown-dark { color: #d1d5db; }
+.library-markdown-dark h1,
+.library-markdown-dark h2,
+.library-markdown-dark h3,
+.library-markdown-dark h4 { color: #f9fafb; }
+.library-markdown-dark a { color: #fb923c; }
+.library-markdown-dark code { background: #1f2937; }
+.library-markdown-dark pre { background: #111827; }
+.library-markdown .katex-display { margin: 1.5rem 0; overflow-x: auto; overflow-y: hidden; padding: 0.75rem 0; }
+.library-markdown .katex { font-size: 1.05em; }
+.library-markdown-light .katex { color: #111827; }
+.library-markdown-dark .katex { color: #f9fafb; }
+.library-markdown pre code.hljs { display: block; overflow-x: auto; padding: 1rem; }
+.library-markdown-light .hljs { color: #24292f; background: #f6f8fa; }
+.library-markdown-light .hljs-comment,
+.library-markdown-light .hljs-quote { color: #6e7781; }
+.library-markdown-light .hljs-keyword,
+.library-markdown-light .hljs-selector-tag,
+.library-markdown-light .hljs-literal { color: #cf222e; }
+.library-markdown-light .hljs-string,
+.library-markdown-light .hljs-attr { color: #0a3069; }
+.library-markdown-light .hljs-title,
+.library-markdown-light .hljs-section,
+.library-markdown-light .hljs-name { color: #8250df; }
+.library-markdown-light .hljs-number,
+.library-markdown-light .hljs-variable,
+.library-markdown-light .hljs-template-variable { color: #0550ae; }
+.library-markdown-dark .hljs { color: #e6edf3; background: #0d1117; }
+.library-markdown-dark .hljs-comment,
+.library-markdown-dark .hljs-quote { color: #8b949e; }
+.library-markdown-dark .hljs-keyword,
+.library-markdown-dark .hljs-selector-tag,
+.library-markdown-dark .hljs-literal { color: #ff7b72; }
+.library-markdown-dark .hljs-string,
+.library-markdown-dark .hljs-attr { color: #a5d6ff; }
+.library-markdown-dark .hljs-title,
+.library-markdown-dark .hljs-section,
+.library-markdown-dark .hljs-name { color: #d2a8ff; }
+.library-markdown-dark .hljs-number,
+.library-markdown-dark .hljs-variable,
+.library-markdown-dark .hljs-template-variable { color: #79c0ff; }
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+
+  @layer utilities {
+
+    .animate-fall {
+      @apply animate-[fall_10s_linear_infinite];
+    }
+  
+    @keyframes fall {
+      from {
+        transform: translateY(-50px);
+      }
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+
+    .shadow-snow {
+      box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
+    }
+  
+    .shadow-rain {
+      box-shadow: 0 0 10px 2px rgba(0, 0, 255, 0.1);
+    }
+
+
+
+    /* Todo Animacion */
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .animate-slide-in-left {
+      animation: slideInLeft 1s ease-in;
+    }
+
+
+    /* Todo Paleta de colores */
+
+    /* Gris Claro */
+    .bg-custom-light-gray {
+      background-color: #E8E8E8;
+    }
+    .text-custom-light-gray {
+      color: #E8E8E8;
+    }
+    .custom-button-light-gray {
+      color: #E8E8E8;
+      border-color: #E8E8E8;
+    }
+    .custom-button-light-gray:hover {
+      background-color: #606060;
+      /* Gris oscuro */
+      color: #fff;
+    }
+
+
+    /* Gris Oscuro */
+    .bg-custom-dark-gray {
+      background-color: #606060;
+    }
+
+    .text-custom-dark-gray {
+      color: #606060;
+    }
+
+    .custom-button-dark-gray {
+      color: #606060;
+      border-color: #606060;
+    }
+
+    .custom-button-dark-gray:hover {
+      background-color: #E8E8E8;
+      /* Gris claro */
+      color: #4A4A4A;
+    }
+
+    /* Dorado Suave */
+    .bg-custom-soft-gold {
+      background-color: #F5D77F;
+    }
+
+    .text-custom-soft-gold {
+      color: #F5D77F;
+    }
+
+    .custom-button-soft-gold {
+      color: #F5D77F;
+      border-color: #F5D77F;
+    }
+
+    .custom-button-soft-gold:hover {
+      background-color: #D4AF37;
+      /* Dorado oscuro */
+      color: #fff;
+    }
+
+    /* Dorado Oscuro */
+    .bg-custom-dark-gold {
+      background-color: #D4AF37;
+    }
+
+    .text-custom-dark-gold {
+      color: #D4AF37;
+    }
+
+    .custom-button-dark-gold {
+      color: #D4AF37;
+      border-color: #D4AF37;
+    }
+
+    .custom-button-dark-gold:hover {
+      background-color: #F5D77F;
+      /* Dorado suave */
+      color: #4A4A4A;
+    }
+  }
+
+}

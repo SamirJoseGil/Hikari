@@ -4,8 +4,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 import "./tailwind.css";
 
@@ -22,7 +24,16 @@ export const links: LinksFunction = () => [
   },
 ];
 
+export function loader(_args: LoaderFunctionArgs) {
+  return json({
+    ENV: {
+      BACKEND_URL: process.env.BACKEND_URL || "http://127.0.0.1:8000",
+    },
+  });
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -34,6 +45,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="bg-white dark:bg-black">
         {children}
+        <script
+          // Exposes BACKEND_URL to client-side fetches (Remix pattern for runtime env vars).
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data?.ENV ?? {})};`,
+          }}
+        />
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -44,3 +61,4 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return <Outlet />;
 }
+

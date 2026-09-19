@@ -1,0 +1,37 @@
+[
+  {
+    "id": "C1_despido",
+    "message": "Me despidieron sin justa causa después de 3 años de trabajo. ¿Qué me deben pagar?",
+    "expected_scope": "laboral",
+    "expected_intent": "terminacion_laboral",
+    "expect_citations": true
+  },
+  {
+    "id": "C2_acoso_cambio",
+    "message": "Mi jefe me grita frente a todos y me cambió de cargo sin avisarme.",
+    "expected_scope": "laboral",
+    "expected_intent": "acoso_laboral",
+    "expect_citations": true
+  },
+  {
+    "id": "C3_fuera_de_dominio",
+    "message": "Me estafaron comprando un carro usado.",
+    "expected_scope": "fuera_de_dominio",
+    "expected_intent": "desconocida",
+    "expect_citations": false
+  },
+  {
+    "id": "C4_salario",
+    "message": "No me han pagado mi salario del último mes.",
+    "expected_scope": "laboral",
+    "expected_intent": "salario",
+    "expect_citations": true
+  },
+  {
+    "id": "C5_vacaciones",
+    "message": "Llevo dos años trabajando y no me han dado vacaciones.",
+    "expected_scope": "laboral",
+    "expected_intent": "vacaciones",
+    "expect_citations": true
+  }
+]

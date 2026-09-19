@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Exportación a PDF de una consulta (window.print()): fuerza texto/legibilidad en
+   papel independientemente del modo claro/oscuro activo en pantalla. */
+@media print {
+  body {
+    background: white !important;
+  }
+  .print-area,
+  .print-area * {
+    color: #000 !important;
+    background: transparent !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
+  }
+}
+
 .library-markdown {
   max-width: 78ch;
   font-size: 1rem;

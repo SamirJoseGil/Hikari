@@ -147,5 +147,12 @@ python ../evals/run_evals.py --live --base-url http://127.0.0.1:8000
 
 ---
 
+## Links Importantes: 
+
+### https://gamma.app/docs/HIKARI-8rzlcvygfp3co6c
+### Hikari.sglabs.site
+### Hikariapi.sglabs.site
+### portfolio.sglabs.site
+
 **HIKARI ofrece orientación general y no sustituye el consejo de un abogado. Verifica siempre
 con un profesional.**
